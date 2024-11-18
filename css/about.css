@@ -30,21 +30,23 @@
 
 .quote-wrapper h1 {
     font-style: italic;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 400;
 }
 
 .quote-wrapper h3 {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--color-light);
 }
 
 .about-text-img {
+    position: relative;
     display: flex;
     align-items: stretch;
     justify-content: center;
     height: 100%;
+    width: 100%;
 }
 
 .about-column {
@@ -62,16 +64,16 @@
 
 .about-column.w-25 p {
     font-weight: 700;
-    font-size: 32px;
-    line-height: 38px;
+    font-size: 2rem;
+    line-height: 2.375rem;
     color: var(--color-light);
     transform: rotate(-90deg);
 }
 
 .about-column.w-50 {
     max-width: 50%;
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 1.375rem;
+    line-height: 1.625rem;
     color: var(--color_dark);
     background-color: white;
     padding: 60px 120px;
@@ -79,7 +81,7 @@
 
 .about-column p {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--color_dark);
 }
 
@@ -94,7 +96,7 @@
 }
 
 .about-column.last p {
-    font-size: 22px;
+    font-size: 1.375rem;
     color: var(--color-light);
 }
 
@@ -103,4 +105,70 @@
     min-height: 360px;
     object-fit: cover;
     height: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+    .about-column.hide-tablet {
+        display: none;
+    }
+
+    .quote-img {
+        width: 100%;
+        height: 30rem;
+        min-height: 0;
+    }
+
+    .about-column {
+        position: relative;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .about-column.welcome {
+        background-color: #D3D3D399;
+        padding: 2rem 5rem;
+    }
+
+    .about-column.last {
+        background-color: #58577599;
+        padding: 2rem 5rem;
+    }
+
+    .about-column.welcome, .about-column.last {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        min-height: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .about-column img {
+        z-index: -1;
+    }
+
+    .about-column.w-25 {
+        position: relative;
+        z-index: 1;
+        width: 50%;
+        object-fit: cover;
+        max-width: 100%;
+    }
+
+    .about-column.w-50 {
+        padding: 2rem 5rem;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .hide-mobile {
+        display: none;
+    }
+
+    .about-column.w-50 {
+        max-width: 100%;
+    }
 }
